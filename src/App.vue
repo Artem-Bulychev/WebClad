@@ -51,6 +51,11 @@ export default {
 
 .navbar-link {
   position: relative;
+  background-color: rgba(42, 113, 250, 0.30);
+  border-radius: 25px;
+  width: 140px;
+  height: 35px;
+  text-align: center;
 
   &.router-link-exact-active {
     color: #ffffff;
