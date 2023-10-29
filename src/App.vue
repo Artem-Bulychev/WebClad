@@ -39,6 +39,18 @@ export default {
 
 <style lang="scss">
 
+.navbar-item {
+  text-align: center;
+  background-color: rgba(42, 113, 250, 0.30);
+  border-radius: 25px;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .navbar-content {
   min-width: 1450px;
 }
@@ -51,11 +63,12 @@ export default {
 
 .navbar-link {
   position: relative;
-  background-color: rgba(42, 113, 250, 0.30);
-  border-radius: 25px;
-  width: 140px;
-  height: 35px;
-  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
 
   &.router-link-exact-active {
     color: #ffffff;
