@@ -21,6 +21,7 @@
       <div class="container">
         <div class="container__shop">
           <h1 class="shop__title">Библиотека макетов</h1>
+          <div class="shop__filter"></div>
           <div class="item__wrapper">
             <shopItem
               v-for="product in shopList" :key="product.id"
