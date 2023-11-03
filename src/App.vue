@@ -8,7 +8,7 @@
             <div class="logo"></div>
             <ul class="navbar-list">
               <li class="navbar-item" v-for="link in links" :key="link.title">
-                <router-link class="navbar-link" :title="link.title" :to="link.url">{{ link.title }}</router-link>
+                <a class="navbar-link" :href="link.url" @click="scrollToElement(link.scrollTo)">{{ link.title }}</a>
               </li>
             </ul>
           </div>
@@ -27,11 +27,40 @@
 export default {
   data () {
     return {
-      links: [
-        { title: 'Главная', url: '/' },
-        { title: 'Макеты', url: '/shop' },
-        { title: 'Контакты', url: '/shop' },
-      ]
+    links: [
+      { title: 'Главная', url: '/', scrollTo: '#home-section' },
+      { title: 'Макеты', url: '/shop', scrollTo: '#shop-section' },
+      { title: 'Контакты', url: '/contact', scrollTo: '#contact-section' }
+    ],      
+      scrollTo: null,
+      savedScrollPosition: null
+    };
+  },
+
+  methods: {
+    scrollToElement(selector) {
+      this.scrollTo = selector;
+    }
+  },
+  
+  beforeRouteLeave(to, from, next) {
+    // Сохраняем позицию прокрутки перед уходом с текущего маршрута
+    const element = document.querySelector(this.scrollTo);
+    if (element) {
+      this.savedScrollPosition = element.scrollTop;
+    }
+
+    // Переходим на следующий маршрут
+    next();
+  },
+  
+  mounted() {
+    // Восстанавливаем позицию прокрутки после обновления страницы
+    if (this.savedScrollPosition) {
+      const element = document.querySelector(this.scrollTo);
+      if (element) {
+        element.scrollTop = this.savedScrollPosition;
+      }
     }
   }
 }

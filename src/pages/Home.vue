@@ -2,7 +2,7 @@
   <div class="wrapper-content wrapper-content--fixed">
     <section>
       <div class="container">
-        <div class="container__home">
+        <div class="container__home" id="home-section">
           <h1 class="container__title">Макеты Figma для верстки сайтов</h1>
           <p class="container__subtitle">Предлагаем вам уникальное решение для упрощения процесса верстки - множество качественных макетов и шаблонов различных тематик и сложности.</p>
           <p class="container__text">Добро пожаловать на главную страницу WebClad - вашего источника креативных и функциональных макетов для верстки сайтов!
@@ -18,7 +18,7 @@
       </div>
     </section>
     <section>
-      <div class="container">
+      <div class="container link" id="shop-section">
         <div class="container__shop">
           <h1 class="shop__title">Библиотека макетов</h1>
           <div class="shop__filter"></div>
