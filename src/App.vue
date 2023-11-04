@@ -30,7 +30,7 @@ export default {
       links: [
         { title: 'Главная', url: '/' },
         { title: 'Макеты', url: '/shop' },
-        { title: 'Контакты', url: '/shop' },
+        { title: 'Контакты', url: '/contact' },
       ]
     }
   }

@@ -153,4 +153,12 @@ export default {
   width: 20px;
   height: 20px;
 }
+
+.item__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 72px;
+  grid-column-gap: 40px;
+
+}
 </style>
