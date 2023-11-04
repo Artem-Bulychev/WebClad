@@ -1,8 +1,10 @@
 <template>
-  <div class="item">
+  <router-link class="item" :to="/shop/ + product.id">
     <img :src="product.img" :alt="product.title">
-    <router-link :to="/shop/ + product.id" class="link"> {{ product.title }} </router-link>
-  </div>
+    <a class="link"> {{ product.title }} </a>
+    <br>
+    <a class="subtitle__shop"> {{ product.descr }} </a>
+  </router-link>
 </template>
 
 <script>
@@ -24,9 +26,18 @@ export default {
   flex-wrap: wrap;
 }
 .item {
-  max-width: 48%;
+  width: 470px;
   p {
     font-size: 22px;
   }
+}
+
+.subtitle__shop {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
 }
 </style>
