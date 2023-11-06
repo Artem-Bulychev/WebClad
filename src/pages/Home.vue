@@ -21,9 +21,15 @@
       <div class="container">
         <div class="container__shop">
           <h1 class="shop__title">Библиотека макетов</h1>
+          <div class="shop__filter">
+            <button class="shop__item shop__filter_all " @click="filterShop('all')">Показать все</button>
+            <button class="shop__item shop__filter_easy" @click="filterShop('easy')">Легкий</button>
+            <button class="shop__item shop__filter_medium" @click="filterShop('medium')">Средний</button>
+            <button class="shop__item shop__filter_hard" @click="filterShop('hard')">Сложный</button>
+          </div>
           <div class="item__wrapper">
             <shopItem
-              v-for="product in shopList" :key="product.id"
+              v-for="product in filteredShopList" :key="product.id"
               :product="product" />
           </div>
         </div>
@@ -33,13 +39,15 @@
 </template>
 
 <script>
-import shopItem from '@/components/ShopItem.vue'
+import shopItem from '@/components/ShopItem.vue';
+import { shopList } from '@/store/shop.js';
+
 export default {
   components: { shopItem },
   data () {
     return {
-      shopList: null,
-
+      shopList,
+      filter: "all",
       socialMedia: [
         { name: 'VK', link: 'https://vk.com', icon: 'VK.svg' },
         { name: 'Twitter', link: 'https://www.twitter.com', icon: 'iconTwitter.svg' },
@@ -48,6 +56,20 @@ export default {
       ]
     }
 
+  },
+  computed: {
+    filteredShopList() {
+      if (this.filter === "all") {
+        return this.shopList;
+      } else {
+        return this.shopList.filter((product) => product.level === this.filter);
+      }
+    },
+  },
+  methods: {
+    filterShop(filter) {
+      this.filter = filter;
+    },
   },
   created () {
     this.shopList = this.$store.getters.getShopList
@@ -113,7 +135,7 @@ export default {
 .shop__title {
   margin: 0;
   padding: 0;
-  padding-bottom: 150px;
+  padding-bottom: 54px;
   color: #FFF;
   font-family: Montserrat;
   font-size: 54px;
@@ -160,5 +182,30 @@ export default {
   grid-row-gap: 72px;
   grid-column-gap: 40px;
 
+}
+
+.shop__filter {
+  display: inline-flex;
+  height: 40.035px;
+  padding-bottom: 130px;
+  align-items: flex-end;
+  gap: 40px;
+  flex-shrink: 0;
+}
+
+.shop__item {
+  text-align: center;
+  background-color: rgba(26, 154, 214, 0.3);
+  border-radius: 25px;
+  color: white; 
+  width: 160px;
+  height: 45px;
+  font-family: Montserrat;
+  font-size: 20px;
+  border:none;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 </style>
