@@ -29,11 +29,19 @@
           </div>
           <div class="item__wrapper">
             <shopItem
-              v-for="product in filteredShopList" :key="product.id"
+              v-for="product in filteredAndPaginatedShopList" :key="product.id"
               :product="product" />
           </div>
         </div>
       </div>
+    </section>
+    <section>
+      <div>
+        <div class="button-list">
+          <div class="btn btnPrimary" @click="prevPage"> &#8592;</div>
+          <div class="btn btnPrimary" @click="nextPage"> &#8594;</div>
+        </div>
+      </div> 
     </section>
   </div>
 </template>
@@ -51,13 +59,18 @@ export default {
       socialMedia: [
         { name: 'VK', link: 'https://vk.com', icon: 'VK.svg' },
         { name: 'Twitter', link: 'https://www.twitter.com', icon: 'iconTwitter.svg' },
-        { name: 'YouTube', link: 'https://www.YouTube.com', icon: 'YouTube.svg' },
-        { name: 'YouTube', link: 'https://www.YouTube.com', icon: 'Telegram.svg' },
-      ]
+        { name: 'youTube', link: 'https://www.YouTube.com', icon: 'YouTube.svg' },
+        { name: 'Telegram', link: 'https://t.me/Figmab', icon: 'Telegram.svg' },
+      ],
+      page: {
+        current: 1,
+        length: 6,
+      }
     }
 
   },
   computed: {
+    
     filteredShopList() {
       if (this.filter === "all") {
         return this.shopList;
@@ -65,12 +78,32 @@ export default {
         return this.shopList.filter((product) => product.level === this.filter);
       }
     },
+
+    filteredAndPaginatedShopList() {
+    const filteredList = this.filteredShopList;
+    console.log(filteredList);
+    return filteredList.filter((row, index) => {
+      let start = (this.page.current - 1) * this.page.length;
+      let end = this.page.current * this.page.length;
+      return index >= start && index < end;
+    });
+  },
+
   },
   methods: {
     filterShop(filter) {
       this.filter = filter;
     },
+
+    // Pagination
+    prevPage () {
+      if (this.page.current > 1) this.page.current-=1
+    },
+    nextPage () {
+      if ((this.page.current * this.page.length) < this.shopList.length) this.page.current+=1
+    }
   },
+
   created () {
     this.shopList = this.$store.getters.getShopList
   }
@@ -208,4 +241,20 @@ export default {
   font-weight: 700;
   line-height: normal;
 }
+
+.button-list {
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+    border-radius: 60px;
+    margin: 0 20px;
+  }
+
+.btnPrimary {
+    color: #ffffff;
+    border: 1px solid #494ce8;
+    background-color: rgba(26, 154, 214, 0.3);
+  }
 </style>
