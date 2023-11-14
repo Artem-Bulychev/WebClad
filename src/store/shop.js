@@ -6,6 +6,7 @@ export default {
         title: 'Джонни тунец',
         descr: 'Сайт доставки еды',
         img: require('../assets/img/1.png'),
+        level: 'easy',
         gallery: [
           { name: 'Джонни тунец', img: require('../assets/img/1.png') },
           { name: 'Джонни тунец', img: require('../assets/img/2.png') },
@@ -16,6 +17,7 @@ export default {
         title: 'Cocteil',
         descr: 'Интернет-магазин одежды',
         img: require('../assets/img/4.png'),
+        level: 'easy',
         gallery: [
           { name: 'Cocteil', img: require('../assets/img/4.png') },
         ]
@@ -25,6 +27,7 @@ export default {
         title: 'Gild',
         descr: 'Интернет-магазин мебели',
         img: require('../assets/img/7.png'),
+        level: 'medium',
         gallery: [
           { name: 'Gild', img: require('../assets/img/7.png') },
         ]
@@ -34,6 +37,7 @@ export default {
         title: 'Webovio',
         descr: 'Макет лендинга для дизайнерской фирмы...',
         img: require('../assets/img/10.png'),
+        level: 'medium',
         gallery: [
           { name: 'Webovio', img: require('../assets/img/10.png') },
         ]
@@ -43,6 +47,7 @@ export default {
         title: 'Step',
         descr: 'Макет лендинга для сайта по продаже обуви',
         img: require('../assets/img/11.png'),
+        level: 'medium',
         gallery: [
           { name: 'Step', img: require('../assets/img/11.png') },
         ]
@@ -52,6 +57,7 @@ export default {
         title: 'Food wagon',
         descr: 'Макет лендинга на тему доставки еды',
         img: require('../assets/img/12.png'),
+        level: 'hard',
         gallery: [
           { name: 'Food wagon', img: require('../assets/img/12.png') },
         ]
@@ -61,6 +67,7 @@ export default {
         title: 'Auraglow',
         descr: 'Макет лендинга для компании, занимающей...',
         img: require('../assets/img/13.png'),
+        level: 'hard',
         gallery: [
           { name: 'Auraglow', img: require('../assets/img/13.png') },
         ]
@@ -70,6 +77,7 @@ export default {
         title: 'Panto',
         descr: 'Макет лендинга для сайта по продаже пре...',
         img: require('../assets/img/14.png'),
+        level: 'hard',
         gallery: [
           { name: 'Panto', img: require('../assets/img/14.png') },
         ]
@@ -79,6 +87,7 @@ export default {
         title: 'GoTrieop',
         descr: 'Макет лендинга на тему путешествий и отды...',
         img: require('../assets/img/15.png'),
+        level: 'hard',
         gallery: [
           { name: 'GoTrieop', img: require('../assets/img/15.png') },
         ]
@@ -88,6 +97,7 @@ export default {
         title: 'Diamaint',
         descr: 'Макет лендинга для сайта по продаже нату...',
         img: require('../assets/img/16.png'),
+        level: 'hard',
         gallery: [
           { name: 'Diamaint', img: require('../assets/img/16.png') },
         ]
@@ -97,6 +107,7 @@ export default {
         title: 'Schoolio',
         descr: 'Макет лендинга для школы',
         img: require('../assets/img/17.png'),
+        level: 'medium',
         gallery: [
           { name: 'Schoolio', img: require('../assets/img/17.png') },
         ]
@@ -106,6 +117,7 @@ export default {
         title: 'FT Yoga',
         descr: 'Макет лендинга на тему йоги',
         img: require('../assets/img/18.png'),
+        level: 'medium',
         gallery: [
           { name: 'FT Yoga', img: require('../assets/img/18.png') },
         ]

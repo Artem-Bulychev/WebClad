@@ -46,9 +46,14 @@ export default {
   width: 140px;
   height: 50px;
   text-align: center;
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.navbar-item:hover {
+  background-color: rgba(10, 205, 235, 0.3);
 }
 
 .navbar-content {
@@ -78,6 +83,7 @@ export default {
 .logo {
   background-image: url(../src/assets/img/Лого.png);
   background-repeat: no-repeat;
+  z-index: 4;
   margin-top: 40px;
   margin-bottom: 40px;
    /* ставим размеры для логотипа */
