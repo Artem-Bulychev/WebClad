@@ -27,9 +27,17 @@ export default {
 }
 .item {
   width: 470px;
+  border: 5px solid transparent; /* Устанавливаем толщину границы */
+  border-radius: 11px; /* Устанавливаем радиус закругления углов */
+  transition: border-color 0.3s ease; /* Плавный переход */
   p {
     font-size: 22px;
   }
+}
+
+.item:hover, .item:focus {
+  border-color: #ccfaf3b2;
+
 }
 
 .subtitle__shop {
