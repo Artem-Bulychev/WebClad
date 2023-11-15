@@ -1,0 +1,28 @@
+{
+  "name": "shop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "jw-vue-pagination": "^1.0.3",
+    "vue": "^2.6.6",
+    "vue-carousel": "^0.18.0",
+    "vue-pagination-2": "^3.1.0",
+    "vue-router": "^3.0.2",
+    "vuejs-paginate": "^2.1.0",
+    "vuex": "^3.1.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "gh-pages": "^6.0.0",
+    "sass": "^1.69.4",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
+  }
+}
