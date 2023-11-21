@@ -5,7 +5,7 @@
       <div class="navbar">
         <div class="container">
           <div class="navbar-content">
-            <div class="logo"></div>
+            <div class="logo"><a class="logo" href="index.html"><img src="../src/assets/img/minlogo.svg" alt="WebClad">WebClad</a></div>
             <ul class="navbar-list">
               <li class="navbar-item" v-for="link in links" :key="link.title">
                 <router-link class="navbar-link" :title="link.title" :to="link.url">{{ link.title }}</router-link>
@@ -38,26 +38,21 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import "/assets/utils/vars.scss";
 .navbar-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 40px;
   text-align: center;
   background-color: rgba(42, 113, 250, 0.30);
-  border-radius: 25px;
-  width: 140px;
-  height: 50px;
-  text-align: center;
+  border-radius: $border-radius;
   z-index: 4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .navbar-item:hover {
   background-color: rgba(10, 205, 235, 0.3);
-}
-
-.navbar-content {
-  min-width: 1450px;
 }
 
 .wrapper {
@@ -68,28 +63,31 @@ export default {
 
 .navbar-link {
   position: relative;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-style: normal;
+  font-family: $mainFont;
+  font-size: 18px;
   font-weight: 700;
-  line-height: normal;
 
 
   &.router-link-exact-active {
-    color: #ffffff;
+    color: $mainFontColor;
   }
 }
 
 .logo {
-  background-image: url(../src/assets/img/Лого.png);
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  font-family: $mainFont;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: $mainFontColor;
   z-index: 4;
-  margin-top: 40px;
-  margin-bottom: 40px;
-   /* ставим размеры для логотипа */
-  width: 200px;
-  height: 50px;
-   /* вписываем png картинку в размеры, если получится поставить svg формат можно и убрать :) */
-  object-fit: cover; /* Будёт плохо смотреться поставить contain */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  img{
+    display: inline-block;
+    margin-right: 4px;
+  }
 }
 </style>

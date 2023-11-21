@@ -45,7 +45,7 @@
     </section>
     <footer class="footer">
         <ul class="footer__links">
-          <li class="footer__logo"></li>
+          <li class="footer__logo logo"><a class="logo" href="index.html"><img src="../assets/img/minlogo.svg" alt="WebClad">WebClad</a></li>
           <li class="footer__item"><a href="https://yandex.ru/maps" class="footer__link">Политика<br>конфиденциальности</a></li>
           <li class="footer__item"><a class="footer__link">2023 © Все права защищены </a></li>
           <li class="footer__social">
@@ -137,7 +137,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "../assets/utils/vars.scss";
+
 
 .container__home {
   display: grid;
@@ -173,16 +175,15 @@ export default {
 }
 
 .container__title {
-  color: #FFF;
-  font-size: 64px;
-  font-style: normal;
+  color: $mainFontColor;
+  font-size: $titleFontSize ;
   font-weight: 700;
   line-height: normal;
   min-width: 700px;
 }
 
 .container__subtitle {
-  color: #FFF;
+  color: $mainFontColor;
   max-width: 518.33px;;
   font-size: 25px;
   font-style: normal;
@@ -192,7 +193,7 @@ export default {
 }
 
 .container__text {
-  color: #FFF;
+  color: $mainFontColor;
   font-size: 25px;
   font-style: normal;
   font-weight: 500;
@@ -205,8 +206,8 @@ export default {
 }
 
 .link {
-  color: #FFF;
-  font-family: Montserrat;
+  color: $mainFontColor;
+  font-family: $mainFont;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -218,8 +219,8 @@ export default {
   margin: 0;
   padding: 0;
   padding-bottom: 54px;
-  color: #FFF;
-  font-family: Montserrat;
+  color: $mainFontColor;
+  font-family: $mainFont;
   font-size: 54px;
   font-style: normal;
   font-weight: 700;
@@ -243,8 +244,8 @@ export default {
   }
 
 .container__social {
-  color: #FFF;
-  font-family: Montserrat;
+  color: $mainFontColor;
+  font-family: $mainFont;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -292,11 +293,11 @@ export default {
 .shop__item {
   text-align: center;
   background-color: rgba(26, 154, 214, 0.3);
-  border-radius: 25px;
-  color: white; 
+  border-radius: $border-radius;
+  color: $mainFontColor; 
   width: 160px;
   height: 45px;
-  font-family: Montserrat;
+  font-family: $mainFont;
   font-size: 20px;
   border:none;
   cursor: pointer;
@@ -315,12 +316,12 @@ export default {
 }
 
 .btn {
-    border-radius: 60px;
+    border-radius: $border-radius;
     margin: 0 20px;
   }
 
 .btnPrimary {
-    color: #ffffff;
+    color: $mainFontColor;
     background-color: rgba(26, 154, 214, 0.3);
   }
 
@@ -331,15 +332,16 @@ export default {
 .footer {
   display: flex;
   flex-direction: row;
-  font-family: Montserrat;
+  font-family: $mainFont;
   justify-content: center; /* изменено значение */
   margin: 130px auto 24px;
 }
 
 .footer__links {
     display: flex;
-    list-style: none;
     justify-content: flex-start;
+    align-items: center;
+    list-style: none;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
@@ -356,7 +358,7 @@ export default {
 }
 
 .footer__link {
-    color: #FFF;
+    color: $mainFontColor;
     justify-content: flex-start;
     font-size: 16px;
     font-weight: 400;
@@ -365,14 +367,7 @@ export default {
  }
 
 .footer__logo {
-    background-image: url(../assets/img/Лого.png);
-    background-repeat: no-repeat;
     z-index: 4;
-    /* ставим размеры для логотипа */
-    width: 200px;
-    height: 50px;
-    /* вписываем png картинку в размеры, если получится поставить svg формат можно и убрать :) */
-    object-fit: cover; /* Будёт плохо смотреться поставить contain */
     margin-left: 100px;
 }
 

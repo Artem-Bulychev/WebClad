@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper-content wrapper-content--fixed ">
+  <div class="wrapper-content wrapper-content--fixed wrapper-content--product ">
     <section class="product-modal">
       <div class="container">
         <p class="modal__title">Оставить заявку</p>
@@ -38,7 +38,8 @@
             <!-- content -->
             <div class="product-content">
               <p class="product-content__descr">{{ product.descr }}</p>
-              <a class="product-content__link link"><img class="product-content__icon" src="../assets/img/figma-icon.svg" alt="figma icon">Ссылка на макет</a>
+              <a class="product-content__link link">
+                <img class="product-content__icon" src="../assets/img/figma-svgrepo-com.svg" alt="figma icon">Ссылка на макет{{ product.link }}</a>
               <p class="product-content__info-title">Сложность:<span class="product-content__info">{{ product.level }}</span></p>
               <p class="product-content__info-title">Язык:<span class="product-content__info">RUS</span></p>
               <p class="product-content__info-title">Исполнитель:<span class="product-content__info">Имя и Фамилия</span></p>
@@ -68,105 +69,133 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/utils/vars.scss";
 .wrapper-content,
 .product-modal{
-  background-color: #0F0F26;
+  background-color: $background-color-product;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.wrapper-content.wrapper-content--fixed.wrapper-content--product{
+margin-top: 0;
 }
 .modal__title{
-  font-size: 64px;
+  font-size: $titleFontSize;
   font-weight: 700;
-  line-height: 64px;
-  color: #FFF;
-  padding-top: 156px;
-  margin-bottom: 75px;
+  line-height: $titleFontSize;
+  color: $mainFontColor;
+  padding-top: 50px;
+  margin-bottom: 50px;
 }
 .product{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   &__title{
-    font-family: Montserrat;
-    font-size: 50px;
+    font-family: $mainFont;
+    font-size: $titleSmallFontSize;
     font-weight: 700;
-    line-height: normal;
-    color: #FFF;
-    margin-top: -125px;
+    line-height: $titleSmallFontSize;
+    color: $mainFontColor;
+    margin-top: -100px;
     margin-bottom: 25px;
   }
 }
   .product-slider{
-  &__img{
+    &__img{
     width: 100%;
     max-width: 600px;
-    border-radius: 25px;
+    border-radius: $border-radius;
   }
 }
 .product-content {
-  color: #FFF;
+  color: $mainFontColor;
   font-weight: 500;
   line-height: normal;
 		&__descr {
-      font-size: 30px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: $mainLineHeight;
+      padding-top: 20px;
       margin-bottom: 50px;
 		}
 		&__link {
-      font-size: 25px;
+      font-size: 20px;
       font-weight: 500;
       text-decoration-line: underline;
+      &:hover{
+        color: rgba(255, 255, 255, 0.80);;
+      }
     }
     &__icon{
+      display: inline-block;
+      width: 40px;
+      background-color: $background-color-default;
+      border-radius: 50%;
+      padding: 5px;
       margin-right: 10px;
     }
     &__info{
       font-size: 20px;
-      text-decoration-line: underline;
       margin-left: 10px;
 		}
 		&__info-title {
-      font-size: 25px;
-      font-weight: 600;
+      color: rgba(255, 255, 255, 0.70);
+      font-size: $mainFontSize;
+      font-weight: 500;
       margin: 20px 0;
+      span{
+        color: $mainFontColor ;
+      }
 		}
 }
-// .product-slider,
-// .product-content {
-//   width: 48%;
-//   max-width: 48%;
-//   text-align: center;
-// }
+
 .form{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-shrink: 0;
   div{
-    margin-right:25px;
+    margin-right:20px;
   }
   &__lable{
-    max-width: 320px;
+    max-width: 300px;
     display: block;
-    font-size: 17px;
-    line-height: 26px;
+    font-size: $smallFontSize;
+    line-height: $bigLineHeight;
     color: rgba(255, 255, 255, 0.70);
     margin-bottom: 4px; 
+    text-align: left;
   }
   &__input{
-    border: 1.5px solid rgba(255, 255, 255, 0.20);
-    border-radius: 41px;
+    border:$border-modal;
+    border-radius: $border-radius;
     background: rgba(255, 255, 255, 0.10);
-    box-shadow: 0px 0px 38px 0px rgba(255, 255, 255, 0.05);
-    font-size: 17px;
-    color: #fff;
-    padding: 15px 20px;
-    margin-bottom: 19px;
+    box-shadow: $box-shadow  ;
+    font-size: $mainFontSize;
+    color: $mainFontColor;
+    padding: 10px 15px;
+    margin-bottom: 15px;
   }
   &__btn{
     display: inline-block;
     width: 100%;
     max-width: 320px;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 26px;
-    margin: 32px 0 0 0;
+    font-size: $mainFontSize;
+    line-height: $bigLineHeight;
+    margin: 30px 0 0 0;
+    border: $border-modal;
+    box-shadow: $box-shadow  ;
+  }
+ }
+ @media (max-width: 1100px) {
+    .form{
+     
+    }
+}
+@media screen and (max-width: 980px){
+  .container {
+      max-width: 1100px;
   }
 }
 </style>

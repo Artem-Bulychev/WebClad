@@ -15,7 +15,7 @@ export default {
       {
         id: 2,
         title: 'Cocteil',
-        descr: 'Интернет-магазин одежды',
+        descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores illum assumenda nam repellat aspernatur reprehenderit sapiente sequi deleniti, voluptate placeat non labore libero delectus quod nesciunt inventore voluptates odio?',
         img: require('../assets/img/4.png'),
         level: 'easy',
         gallery: [
@@ -25,7 +25,7 @@ export default {
       {
         id: 3,
         title: 'Gild',
-        descr: 'Интернет-магазин мебели',
+        descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores illum assumenda nam repellat aspernatur reprehenderit sapiente sequi deleniti, voluptate placeat non labore libero delectus quod nesciunt inventore voluptates odio?',
         img: require('../assets/img/7.png'),
         level: 'medium',
         gallery: [
@@ -34,8 +34,8 @@ export default {
       },
       {
         id: 4,
-        title: 'Webovio',
-        descr: 'Макет лендинга для дизайнерской фирмы...',
+        title: 'Очень длинное название макета очень длинное название макета',
+        descr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores illum assumenda nam repellat aspernatur reprehenderit sapiente sequi deleniti, voluptate placeat non labore libero delectus quod nesciunt inventore voluptates odio?',
         img: require('../assets/img/10.png'),
         level: 'medium',
         gallery: [
