@@ -46,8 +46,8 @@
     <footer class="footer">
         <ul class="footer__links">
           <li class="footer__logo logo"><a class="logo" href="index.html"><img src="../assets/img/minlogo.svg" alt="WebClad">WebClad</a></li>
-          <li class="footer__item"><a href="https://yandex.ru/maps" class="footer__link footer__polic">Политика<br>конфиденциальности</a></li>
-          <li class="footer__item"><a class="footer__link">2023 © Все права защищены </a></li>
+          <li class="footer__item footer__politic"><a href="https://yandex.ru/maps" class="footer__link">Политика<br>конфиденциальности</a></li>
+          <li class="footer__item footer__copy"><a class="footer__link">2023 © Все права защищены </a></li>
           <li class="footer__social">
             <div class="social-icons">
               <a v-for="social in socialMedia" :key="social.name" :href="social.link">
@@ -347,7 +347,7 @@ export default {
     line-height: 1.12;
     text-decoration: none;
   }
-  &__polic:hover{
+  &__politic:hover{
     text-decoration: underline;
   }
   &__logo {
@@ -357,6 +357,35 @@ export default {
   &__social {
     padding-left: 120px;
   }
+}
+@media (max-width: 1500px){
+  .footer {
+    margin: 120px 0 20px;
+  &__links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  &__item {
+    padding-left: 0px;
+  }
+  &__item:nth-child(3) {
+   padding-left: 0px;
+  }
+  &__link {
+    justify-content: flex-start;
+  }
+  
+  &__logo {
+    flex-shrink: 0;
+    margin-left: 0px;
+  }
+  &__social {
+    padding-left: 0px;
+    flex-shrink: 0;
+  }
+}
 }
 
 @media (max-width: 1250px){
@@ -384,6 +413,21 @@ export default {
     order: 5;
   }
 }
+
+@media (max-width: 1000px){
+  .footer__social {
+       margin: 0 auto;
+  }
+  .social-icons{
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .social-icons a {
+    margin-right: 0px; 
+  }
+}
 @media (max-width: 700px){
   .container__home{
     gap: 40px;
@@ -401,6 +445,28 @@ export default {
     font-size: 16px;
     line-height: 26px;
     max-width: 378px;
+  }
+  .footer{
+    margin-top: 60px;
+  }
+  .footer__links {
+    flex-direction: column;
+  }
+  .footer__politic{
+    margin: 10px 0;
+    order: 3;
+  }
+  .footer__copy{
+    order: 4;
+  }
+  .footer__social {
+    width: 100%;
+    margin: 0;
+    padding: 0 60px;
+  }
+  .social-icons {
+    width: 100%;
+    justify-content: space-between;
   }
   
 }
@@ -426,11 +492,8 @@ export default {
     width: 100%;
     text-align: center;
   }
-  .social-icons {
-    justify-content: space-around;
-}
-  .social-icons a {
-     margin-right: 0px;
-}
+  .footer__social {
+    padding: 0 20px;
+  }
 }
 </style>
