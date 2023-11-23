@@ -1,9 +1,9 @@
 <template>
   <router-link class="item" :to="/shop/ + product.id">
     <img :src="product.img" :alt="product.title">
-    <a class="link"> {{ product.title }} </a>
+    <a class="link text-truncate"> {{ product.title }} </a>
     <br>
-    <a class="subtitle__shop"> {{ product.descr }} </a>
+    <a class="subtitle__shop text-truncate"> {{ product.descr }} </a>
   </router-link>
 </template>
 
@@ -33,6 +33,12 @@ export default {
   p {
     font-size: 22px;
   }
+}
+.text-truncate {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+  -webkit-line-clamp: 2;
 }
 
 .item:hover, .item:focus {
