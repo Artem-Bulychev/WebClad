@@ -45,8 +45,8 @@
     </section>
     <footer class="footer">
         <ul class="footer__links">
-          <li class="footer__logo"></li>
-          <li class="footer__item"><a href="https://yandex.ru/maps" class="footer__link">Политика<br>конфиденциальности</a></li>
+          <li class="footer__logo logo"><a class="logo" href="index.html"><img src="../assets/img/minlogo.svg" alt="WebClad">WebClad</a></li>
+          <li class="footer__item"><a href="https://yandex.ru/maps" class="footer__link footer__polic">Политика<br>конфиденциальности</a></li>
           <li class="footer__item"><a class="footer__link">2023 © Все права защищены </a></li>
           <li class="footer__social">
             <div class="social-icons">
@@ -137,19 +137,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "../assets/utils/vars.scss";
+
 
 .container__home {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  flex-direction: column;
-  column-gap: 200px;
   position: relative;
-  margin: 0;
-  padding: 0;
-  padding-top: 160px;
-  z-index: 2;
   min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+  flex-direction: column;
+  column-gap: 80px;
+  padding-top: 120px;
+  z-index: 2;
 }
 
 .container__home h1,
@@ -157,11 +158,12 @@ export default {
   position: relative; /* Нужно для позиционирования элементов над затемнением */
   z-index: 1; /* Чтобы текстовые элементы отображались над затемнением */
 }
-
+.wrapper-content.wrapper-content--fixed {
+}
 .container__home::before {
   content: '';
   position: absolute;
-  left: -225px;
+  left: -300px;
   top: -220px;
   width: 1920px;
   height: 900px;
@@ -171,44 +173,36 @@ export default {
   opacity: 0.25;
   z-index: -1;
 }
-
 .container__title {
-  color: #FFF;
-  font-size: 64px;
-  font-style: normal;
+  color: $mainFontColor;
+  font-size: $titleFontSize ;
   font-weight: 700;
-  line-height: normal;
-  min-width: 700px;
+  min-width: 650px;
 }
-
 .container__subtitle {
-  color: #FFF;
-  max-width: 518.33px;;
-  font-size: 25px;
+  color: $mainFontColor;
+  max-width: 500px;;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
   grid-column-start: 1
 }
-
 .container__text {
-  color: #FFF;
-  font-size: 25px;
-  font-style: normal;
+  color: $mainFontColor;
+  font-size: 22px;
   font-weight: 500;
-  line-height: 35px; /* 140% */
+  line-height: 35px; 
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  min-width: 600px;
 }
 
 .link {
-  color: #FFF;
-  font-family: Montserrat;
+  color: $mainFontColor;
+  font-family: $mainFont;
   font-size: 40px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
   justify-content: left;
@@ -218,10 +212,9 @@ export default {
   margin: 0;
   padding: 0;
   padding-bottom: 54px;
-  color: #FFF;
-  font-family: Montserrat;
+  color: $mainFontColor;
+  font-family: $mainFont;
   font-size: 54px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
@@ -229,6 +222,9 @@ export default {
 .container__shop {
   margin-top: 200px;
   position: relative;
+  // 
+  // 
+  overflow: hidden;
 }
 
 .container__shop::before {
@@ -243,8 +239,8 @@ export default {
   }
 
 .container__social {
-  color: #FFF;
-  font-family: Montserrat;
+  color: $mainFontColor;
+  font-family: $mainFont;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -292,11 +288,11 @@ export default {
 .shop__item {
   text-align: center;
   background-color: rgba(26, 154, 214, 0.3);
-  border-radius: 25px;
-  color: white; 
+  border-radius: $border-radius;
+  color: $mainFontColor; 
   width: 160px;
   height: 45px;
-  font-family: Montserrat;
+  font-family: $mainFont;
   font-size: 20px;
   border:none;
   cursor: pointer;
@@ -315,12 +311,12 @@ export default {
 }
 
 .btn {
-    border-radius: 60px;
+    border-radius: $border-radius;
     margin: 0 20px;
   }
 
 .btnPrimary {
-    color: #ffffff;
+    color: $mainFontColor;
     background-color: rgba(26, 154, 214, 0.3);
   }
 
@@ -329,54 +325,112 @@ export default {
 }
 
 .footer {
-  display: flex;
-  flex-direction: row;
-  font-family: Montserrat;
-  justify-content: center; /* изменено значение */
+  font-family: $mainFont;
   margin: 130px auto 24px;
-}
-
-.footer__links {
+  &__links {
     display: flex;
-    list-style: none;
     justify-content: flex-start;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 0px;
+    align-items: center;
+    list-style: none;
   }
-
-.footer__item {
-  padding-left: 90px;
-}
-
-.footer__item:nth-child(3) {
-  padding-left: 250px;
-}
-
-.footer__link {
-    color: #FFF;
+  &__item {
+    padding-left: 90px;
+  }
+  &__item:nth-child(3) {
+   padding-left: 250px;
+  }
+  &__link {
+    color: $mainFontColor;
     justify-content: flex-start;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.12;
     text-decoration: none;
- }
-
-.footer__logo {
-    background-image: url(../assets/img/Лого.png);
-    background-repeat: no-repeat;
+  }
+  &__polic:hover{
+    text-decoration: underline;
+  }
+  &__logo {
     z-index: 4;
-    /* ставим размеры для логотипа */
-    width: 200px;
-    height: 50px;
-    /* вписываем png картинку в размеры, если получится поставить svg формат можно и убрать :) */
-    object-fit: cover; /* Будёт плохо смотреться поставить contain */
     margin-left: 100px;
+  }
+  &__social {
+    padding-left: 120px;
+  }
 }
 
-.footer__social {
-  padding-left: 120px;
+@media (max-width: 1250px){
+  .container__home{
+    display: flex;
+    gap: 40px;
+    padding-top: 20px;
+  }
+
+  .container__title {
+    width: 100%;
+    max-width: 650px;
+    min-width: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+  .container__text{
+    order: 1;
+  }
+  .container__subtitle{
+    max-width: 650px;
+    order: 2;
+  }
+  .container__social{
+    order: 5;
+  }
+}
+@media (max-width: 700px){
+  .container__home{
+    gap: 40px;
+    padding-top: 20px;
+  }
+  .container__title {
+    font-size: 44px;
+    line-height: 44px;
+}
+  .container__text{
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .container__subtitle{
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 378px;
+  }
+  
+}
+@media (max-width: 400px){
+  .container__home{
+    gap: 20px;
+    padding-top: 20px;
+  }
+  .container__title {
+    font-size: 32px;
+    line-height: 40px;
+}
+  .container__text{
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .container__subtitle{
+    font-size: 16px;
+    line-height: 25px;
+    max-width: 400px;
+  }
+  .container__social{
+    width: 100%;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: space-around;
+}
+  .social-icons a {
+     margin-right: 0px;
+}
 }
 </style>
