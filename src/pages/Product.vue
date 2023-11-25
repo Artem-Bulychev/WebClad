@@ -72,7 +72,6 @@ export default {
 @import "../assets/utils/vars.scss";
 .wrapper-content,
 .product-modal{
-  background-color: $background-color-product;
   padding-left: 10px;
   padding-right: 10px;
 }
