@@ -1,7 +1,7 @@
 <template>
   <router-link class="item" :to="/shop/ + product.id">
     <img :src="product.img" :alt="product.title">
-    <a class="link text-truncate"> {{ product.title }} </a>
+    <a class="link title__shop text-truncate"> {{ product.title }} </a>
     <br>
     <a class="subtitle__shop text-truncate"> {{ product.descr }} </a>
   </router-link>
@@ -26,12 +26,12 @@ export default {
   flex-wrap: wrap;
 }
 .item {
-  width: 470px;
+  width: 420px;
   border: 5px solid transparent; /* Устанавливаем толщину границы */
   border-radius: 11px; /* Устанавливаем радиус закругления углов */
   transition: border-color 0.3s ease; /* Плавный переход */
   p {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 .text-truncate {
@@ -45,13 +45,16 @@ export default {
   border-color: #ccfaf3b2;
 
 }
+.title__shop{
+  margin-top: 5px;
+}
 
 .subtitle__shop {
   color: #FFF;
   font-family: Montserrat;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 35px;
+  line-height: 30px;
 }
 </style>

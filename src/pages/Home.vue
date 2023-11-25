@@ -46,8 +46,8 @@
     <footer class="footer">
         <ul class="footer__links">
           <li class="footer__logo logo"><a class="logo" href="index.html"><img src="../assets/img/minlogo.svg" alt="WebClad">WebClad</a></li>
-          <li class="footer__item"><a href="https://yandex.ru/maps" class="footer__link footer__polic">Политика<br>конфиденциальности</a></li>
-          <li class="footer__item"><a class="footer__link">2023 © Все права защищены </a></li>
+          <li class="footer__item footer__politic"><a href="https://yandex.ru/maps" class="footer__link">Политика<br>конфиденциальности</a></li>
+          <li class="footer__item footer__copy"><a class="footer__link">2023 © Все права защищены </a></li>
           <li class="footer__social">
             <div class="social-icons">
               <a v-for="social in socialMedia" :key="social.name" :href="social.link">
@@ -158,8 +158,7 @@ export default {
   position: relative; /* Нужно для позиционирования элементов над затемнением */
   z-index: 1; /* Чтобы текстовые элементы отображались над затемнением */
 }
-.wrapper-content.wrapper-content--fixed {
-}
+
 .container__home::before {
   content: '';
   position: absolute;
@@ -202,7 +201,7 @@ export default {
 .link {
   color: $mainFontColor;
   font-family: $mainFont;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   line-height: normal;
   justify-content: left;
@@ -224,7 +223,7 @@ export default {
   position: relative;
   // 
   // 
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .container__shop::before {
@@ -270,8 +269,10 @@ export default {
 
 .item__wrapper {
   display: grid;
+  align-items: start;
+  justify-content: start;
   grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 72px;
+  grid-row-gap: 60px;
   grid-column-gap: 40px;
 
 }
@@ -347,7 +348,7 @@ export default {
     line-height: 1.12;
     text-decoration: none;
   }
-  &__polic:hover{
+  &__politic:hover{
     text-decoration: underline;
   }
   &__logo {
@@ -358,14 +359,48 @@ export default {
     padding-left: 120px;
   }
 }
+@media (max-width: 1500px){
+  .footer {
+    margin: 120px 0 20px;
+  &__links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  &__item {
+    padding-left: 0px;
+  }
+  &__item:nth-child(3) {
+   padding-left: 0px;
+  }
+  &__link {
+    justify-content: flex-start;
+  }
+  
+  &__logo {
+    flex-shrink: 0;
+    margin-left: 0px;
+  }
+  &__social {
+    padding-left: 0px;
+    flex-shrink: 0;
+  }
+}
+}
 
+@media (max-width: 1450px){
+    .item {
+  width: 100%;
+  max-width: 400px;
+  }
+}
 @media (max-width: 1250px){
   .container__home{
     display: flex;
     gap: 40px;
     padding-top: 20px;
   }
-
   .container__title {
     width: 100%;
     max-width: 650px;
@@ -382,6 +417,55 @@ export default {
   }
   .container__social{
     order: 5;
+  }
+}
+
+@media (max-width: 1100px){
+  .item__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 40px;
+}
+  .item {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+@media (max-width: 1000px){
+  .footer__social {
+       margin: 0 auto;
+  }
+  .social-icons{
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  .social-icons a {
+    margin-right: 0px; 
+  }
+}
+
+@media (max-width: 850px){
+  .shop__title {
+    padding-bottom: 40px;
+    font-size: 40px;
+  }
+  .shop__filter {
+    padding-bottom: 130px;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  .shop__item {
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+}
+  .link {
+    font-size: 28px;
+  }
+  .subtitle__shop {
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 @media (max-width: 700px){
@@ -402,7 +486,62 @@ export default {
     line-height: 26px;
     max-width: 378px;
   }
+  .shop__filter {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 150px;
+  }
+  .shop__item.shop__filter_all{
+    width: 100%;  
+  }
+  .item__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+  }
+  .footer{
+    margin-top: 60px;
+  }
+  .footer__links {
+    flex-direction: column;
+  }
+  .footer__politic{
+    margin: 10px 0;
+    order: 3;
+  }
+  .footer__copy{
+    order: 4;
+  }
+  .footer__social {
+    width: 100%;
+    margin: 0;
+    padding: 0 60px;
+  }
+  .social-icons {
+    width: 100%;
+    justify-content: space-between;
+  }
   
+}
+@media (max-width: 550px){
+  .item__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 50px;
+  }
+  .container__shop {
+    margin-top: 100px;
+  }
+  .shop__filter {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 250px;
+  }
+  .shop__item{
+    width: 100%;
+    margin: 0 30px;
+  }
+  .shop__item.shop__filter_all{
+    margin: 0;
+  }
 }
 @media (max-width: 400px){
   .container__home{
@@ -426,11 +565,8 @@ export default {
     width: 100%;
     text-align: center;
   }
-  .social-icons {
-    justify-content: space-around;
-}
-  .social-icons a {
-     margin-right: 0px;
-}
+  .footer__social {
+    padding: 0 20px;
+  }
 }
 </style>
