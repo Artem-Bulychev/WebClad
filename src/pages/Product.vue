@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/utils/vars.scss";
+@import "../assets/scss/utils/vars.scss";
 .wrapper-content,
 .product-modal{
   background-color: $background-color-product;

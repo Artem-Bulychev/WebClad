@@ -20,7 +20,10 @@ export default {
         level: 'easy',
         gallery: [
           { name: 'Cocteil', img: require('../assets/img/4.png') },
-        ]
+        ],
+        autor: 'Иванов Иван Иванович',
+        price: '999999',
+        maket: 'https://t.me/Figmab'
       },
       {
         id: 3,

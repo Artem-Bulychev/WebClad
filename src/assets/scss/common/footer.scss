@@ -1,0 +1,122 @@
+.footer {
+    font-family: $mainFont;
+    margin: 130px auto 24px;
+    &__links {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      list-style: none;
+    }
+    &__item {
+      padding-left: 90px;
+    }
+    &__item:nth-child(3) {
+     padding-left: 250px;
+    }
+    &__link {
+      color: $mainFontColor;
+      justify-content: flex-start;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.12;
+      text-decoration: none;
+    }
+    &__politic:hover{
+      text-decoration: underline;
+    }
+    &__logo {
+      z-index: 4;
+      margin-left: 100px;
+    }
+    &__social {
+      padding-left: 120px;
+    }
+  }
+  .social-icons {
+    display: flex;
+  }
+  
+  .social-icons a {
+    margin-right: 50px;
+  }
+  
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+  @media (max-width: 1500px){
+    .footer {
+      margin: 120px 0 20px;
+    &__links {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    &__item {
+      padding-left: 0px;
+    }
+    &__item:nth-child(3) {
+     padding-left: 0px;
+    }
+    &__link {
+      justify-content: flex-start;
+    }
+    
+    &__logo {
+      flex-shrink: 0;
+      margin-left: 0px;
+    }
+    &__social {
+      padding-left: 0px;
+      flex-shrink: 0;
+    }
+  }
+  }
+  @media (max-width: 1000px){
+    .footer__social {
+         margin: 0 auto;
+    }
+    .social-icons{
+      width: 450px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    .social-icons a {
+      margin-right: 0px; 
+    }
+  }
+  @media (max-width: 700px){
+   
+    .footer{
+      margin-top: 60px;
+    }
+    .footer__links {
+      flex-direction: column;
+    }
+    .footer__politic{
+      margin: 10px 0;
+      order: 3;
+    }
+    .footer__copy{
+      order: 4;
+    }
+    .footer__social {
+      width: 100%;
+      margin: 0;
+      padding: 0 60px;
+    }
+    .social-icons {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+  }
+  
+  @media (max-width: 400px){
+  
+    .footer__social {
+      padding: 0 20px;
+    }
+  }

@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "/assets/utils/vars.scss";
+@import "/assets/scss/utils/vars.scss";
 .navbar-item {
   display: flex;
   justify-content: center;
