@@ -224,7 +224,7 @@ export default {
   position: relative;
   // 
   // 
-  // overflow: hidden; // 
+  overflow: hidden; 
 }
 
 .container__shop::before {
