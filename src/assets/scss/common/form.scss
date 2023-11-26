@@ -1,0 +1,55 @@
+.form {
+	display: flex;
+	flex-shrink: 0;
+	gap: 20px;
+	div {
+		width: 100%;
+	}
+	&__lable {
+		max-width: 300px;
+		display: block;
+		font-size: $smallFontSize;
+		line-height: $bigLineHeight;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 4px;
+		text-align: left;
+	}
+	&__input {
+		width: 100%;
+		border: $border-modal;
+		border-radius: $border-radius;
+		background: rgba(255, 255, 255, 0.1);
+		box-shadow: $box-shadow;
+		font-size: $mainFontSize;
+		color: $mainFontColor;
+		padding: 10px 15px;
+		margin-bottom: 15px;
+	}
+	&__btn {
+		display: inline-block;
+		width: 100%;
+		max-width: 320px;
+		font-size: $mainFontSize;
+		padding: 11px 15px;
+		margin: 30px 0 0 0;
+		border: $border-modal;
+		box-shadow: $box-shadow;
+	}
+}
+@media (max-width: 1100px) {
+	.form {
+		margin-bottom: 50px;
+		&__lable {
+			max-width: 450px;
+		}
+		&__btn {
+			max-width: 450px;
+		}
+	}
+}
+@media (max-width: 700px) {
+	.form {
+		gap: 0;
+		flex-direction: column;
+	}
+}
