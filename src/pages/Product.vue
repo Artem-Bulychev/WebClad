@@ -2,9 +2,8 @@
 	<div class="wrapper-content wrapper-content--fixed wrapper-content--product">
 		<section class="product-modal">
 			<div class="container">
-				<p class="modal__title">Оставить заявку</p>
+				<p class="product-modal__title">Оставить заявку</p>
 				<div class="product">
-					<!-- Form -->
 					<form class="form">
 						<div>
 							<label class="form__lable">Ваше ФИО<input class="form__input" type="text" /></label>
@@ -17,7 +16,6 @@
 							<button class="btn btnPrimary form__btn" type="submit">Отправить заявку</button>
 						</div>
 					</form>
-
 					<div class="product__box">
 						<h1 class="product__title">{{ product.title }}</h1>
 						<!-- slider -->
@@ -28,17 +26,21 @@
 								</slide>
 							</carousel>
 						</div>
-
-						<!-- content -->
-						<div class="product-content">
-							<p class="product-content__descr">{{ product.descr }}</p>
-							<a class="product-content__link link"> <img class="product-content__icon" src="../assets/img/figma-svgrepo-com.svg" alt="figma icon" />Ссылка на макет{{ product.link }}</a>
-							<p class="product-content__info-title">
-								Сложность:<span class="product-content__info">{{ product.level }}</span>
+						<div class="product__wrap">
+							<p class="product__descr">{{ product.descr }}</p>
+							<a class="product-content__link link" href="#"><img class="product__icon" src="../assets/img/figma-svg.svg" alt="figma icon" />Ссылка на макет</a>
+							<p class="product__info-title">
+								Сложность:<span class="product__info">{{ product.level }}</span>
 							</p>
-							<p class="product-content__info-title">Язык:<span class="product-content__info">RUS</span></p>
-							<p class="product-content__info-title">Исполнитель:<span class="product-content__info">Имя и Фамилия</span></p>
-							<p class="product-content__info-title">Стоимость:<span class="product-content__info">6000₽</span></p>
+							<p class="product__info-title">
+								Язык:<span class="product__info">{{ product.language }}</span>
+							</p>
+							<p class="product__info-title">
+								Исполнитель:<span class="product__info">{{ product.autor }}</span>
+							</p>
+							<p class="product__info-title">
+								Стоимость:<span class="product__info">{{ product.price }} ₽</span>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -64,16 +66,14 @@ export default {
 
 <style lang="scss">
 @import '../assets/scss/utils/vars.scss';
-.wrapper-content,
+
 .product-modal {
 	background-color: $background-color-product;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 .wrapper-content.wrapper-content--fixed.wrapper-content--product {
 	margin-top: 0;
 }
-.modal__title {
+.product-modal__title {
 	font-size: $titleFontSize;
 	font-weight: 700;
 	line-height: $titleFontSize;
@@ -84,7 +84,12 @@ export default {
 .product {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	gap: 20px;
+	&__wrap {
+		color: $mainFontColor;
+		font-weight: 500;
+		line-height: normal;
+	}
 	&__title {
 		font-family: $mainFont;
 		font-size: $titleSmallFontSize;
@@ -94,18 +99,6 @@ export default {
 		margin-top: -100px;
 		margin-bottom: 25px;
 	}
-}
-.product-slider {
-	&__img {
-		width: 100%;
-		max-width: 600px;
-		border-radius: $border-radius;
-	}
-}
-.product-content {
-	color: $mainFontColor;
-	font-weight: 500;
-	line-height: normal;
 	&__descr {
 		font-size: 20px;
 		font-weight: 500;
@@ -143,7 +136,13 @@ export default {
 		}
 	}
 }
-
+.product-slider {
+	&__img {
+		width: 100%;
+		max-width: 600px;
+		border-radius: $border-radius;
+	}
+}
 @media (max-width: 1100px) {
 	.product-slider__img {
 		display: flex;
@@ -163,7 +162,7 @@ export default {
 	}
 }
 @media (max-width: 700px) {
-	.modal__title {
+	.product-modal__title {
 		font-size: 44px;
 		line-height: 44px;
 		text-align: center;
@@ -175,8 +174,6 @@ export default {
 			font-size: 36px;
 			line-height: 36px;
 		}
-	}
-	.product-content {
 		&__descr {
 			font-size: 16px;
 		}

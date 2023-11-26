@@ -1,57 +1,72 @@
 .navbar {
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 99;
+	position: relative;
 	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 	padding: 0 10px;
-}
-
-.navbar-content {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.navbar-list {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.navbar-item {
-	margin-right: 30px;
-	cursor: pointer;
-	&:last-child {
-		margin-right: 0;
+	z-index: 99;
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
-}
-
-.navbar-link {
-	display: block;
-	color: #aaaad5;
-	// active link
-	&.active {
-		color: #4343aa;
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 140px;
+		height: 40px;
+		text-align: center;
+		background-color: rgba(42, 113, 250, 0.3);
+		border-radius: $border-radius;
+		margin-right: 30px;
+		cursor: pointer;
+		z-index: 4;
+		&:last-child {
+			margin-right: 0;
+		}
+		&:hover {
+			background-color: rgba(10, 205, 235, 0.3);
+		}
+	}
+	&__link {
+		position: relative;
+		display: block;
+		font-size: 18px;
+		font-weight: 700;
+		color: #aaaad5;
+		// active link
+		&.active {
+			color: #4343aa;
+		}
+		&.router-link-exact-active {
+			color: $mainFontColor;
+		}
 	}
 }
 @media (max-width: 700px) {
-	.navbar-content {
+	.navbar__content {
 		flex-direction: column;
+	}
+	.navbar__list {
+		margin-bottom: 20px;
 	}
 }
 @media (max-width: 570px) {
-	.navbar-item {
+	.navbar__item {
 		margin-right: 15px;
 		width: 100px;
 		height: 40px;
 	}
-	.navbar-link {
+	.navbar__link {
 		font-size: 15px;
 	}
 }
 @media (max-width: 420px) {
-	.navbar-item {
+	.navbar__item {
 		margin-right: 10px;
 		width: 90px;
 		height: 40px;
