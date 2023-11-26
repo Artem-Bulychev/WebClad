@@ -1,12 +1,14 @@
 // обновленные стандартные стили
 
-// Заголовок
-@import "common/title";
-// Контролы
-@import "common/controls";
-// Линки
-@import "common/link";
+// Логотип
+@import 'common/logo';
 // Кнопки
-@import "common/buttons";
+@import 'common/buttons';
 // Меню
-@import "common/navbar";
+@import 'common/navbar';
+// Форма
+@import 'common/form';
+// Footer
+@import 'common/footer';
+// Карточка
+@import 'common/item.scss';

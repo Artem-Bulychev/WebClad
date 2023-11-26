@@ -1,38 +1,47 @@
 // Font
-$mainFont                : 'Montserrat', Helvetica, Arial, sans-serif;
+$mainFont: 'Montserrat', Helvetica, Arial, sans-serif;
 
 // Size
-$mainFontColor           : #101010;
-$mainFontSize            : 18px;
-$mainFontWeight          : 400;
-$mainLineHeight          : 1.4;
+$mainFontColor: #ffffff;
+$smallFontSize: 14px;
+$mainFontSize: 16px;
+$mainFontWeight: 500;
+$bigLineHeight: 30px;
+$mainLineHeight: 1.4;
+$titleFontSize: 64px;
+$titleSmallFontSize: 48px;
 
-$desktopWidth            : 1280px;
-$smDesktopWidth          : 980px;
-$tableWidth              : 768px;
-$phoneWidth              : 480px;
-$smPhoneWidth            : 320px;
-
-
-
+$desktopWidth: 1280px;
+$smDesktopWidth: 980px;
+$tableWidth: 768px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
 
 // Main color
-$default-color           : #ffffff;
-$primary-color           : #444ce0;
-$success-color           : #26de81;
-$danger-color            : #fc5c65;
-$warning-color           : #fed330;
-$light-color             : #999999;
-$purple-color            : #8854d0;
+$default-color: #ffffff;
+$background-color-primary: rgba(26, 154, 214, 0.3);
+$success-color: #26de81;
+// $danger-color            : #fc5c65;
+$background-color-danger: #b53f3f;
+$background-color-product: #0f0f26;
+$background-color-default: #333333;
 
 // Neutral Color
-$neutral-primary         : #303133;
-$neutral-regular         : #606266;
-$neutral-secondary       : #909399;
-$neutral-placeholder     : #C0C4CC;
+// $neutral-primary         : #303133;
+// $neutral-regular         : #606266;
+// $neutral-secondary       : #909399;
+// $neutral-placeholder     : #C0C4CC;
 
 // Border Color
-$border-base             : #DCDFE6;
-$border-light            : #E4E7ED;
-$border-lighter          : #EBEEF5;
-$border-lightex          : #F2F6FC;
+$border-base: #333333;
+$border-base-color: #333333;
+$border-modal: 1.5px solid rgba(255, 255, 255, 0.2);
+// $border-light            : #E4E7ED;
+// $border-lighter          : #EBEEF5;
+// $border-lightex          : #F2F6FC;
+
+// Box Shadow
+$box-shadow: 0px 0px 38px 0px rgba(255, 255, 255, 0.05);
+
+// Border Radius
+$border-radius: 25px;
