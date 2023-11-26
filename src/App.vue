@@ -82,12 +82,14 @@ export default {
   line-height: 24px;
   letter-spacing: 1px;
   color: $mainFontColor;
-  z-index: 4;
   margin-top: 20px;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 4;
   img{
     display: inline-block;
     margin-right: 4px;
+    z-index: 4;
   }
   &__box{
     margin: 20px 0;
@@ -96,6 +98,7 @@ export default {
 @media (max-width: 700px) {
   .logo__box{
     margin:  0;
+    z-index: 5;
   }
   .navbar-list{
     margin-bottom: 20px;

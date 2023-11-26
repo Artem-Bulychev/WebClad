@@ -151,21 +151,22 @@ export default {
   column-gap: 80px;
   padding-top: 120px;
   z-index: 2;
+  overflow: hidden; /* Ensure content doesn't overflow the container */
 }
 
 .container__home h1,
 .container__home p {
-  position: relative; /* Нужно для позиционирования элементов над затемнением */
-  z-index: 1; /* Чтобы текстовые элементы отображались над затемнением */
+  position: relative;
+  z-index: 1;
 }
 
 .container__home::before {
   content: '';
   position: absolute;
-  left: -300px;
-  top: -220px;
-  width: 1920px;
-  height: 900px;
+  left: 0; /* Adjust this value based on your layout */
+  top: 0;  /* Adjust this value based on your layout */
+  width: 100%;
+  height: 100%;
   background-image: url(../assets/img/Фоновое_изображение_главной_стр.jpg);
   background-repeat: no-repeat;
   background-size: cover;
