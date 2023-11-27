@@ -45,6 +45,7 @@
 				</div>
 			</div>
 		</section>
+    <Contact/>
 		<footer class="footer">
 			<ul class="footer__links">
 				<li class="footer__logo logo">
@@ -69,9 +70,10 @@
 <script>
 import shopItem from '@/components/ShopItem.vue';
 import { shopList } from '@/store/shop.js';
+import Contact from '@/pages/Contact.vue';
 
 export default {
-	components: { shopItem },
+	components: { shopItem, Contact  },
 	data() {
 		return {
 			shopList,
