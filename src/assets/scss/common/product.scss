@@ -1,0 +1,90 @@
+.product {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	&__wrap {
+		color: $mainFontColor;
+		font-weight: 500;
+		line-height: normal;
+	}
+	&__title {
+		font-family: $mainFont;
+		font-size: $titleSmallFontSize;
+		font-weight: 700;
+		line-height: $titleSmallFontSize;
+		color: $mainFontColor;
+		margin-top: -100px;
+		margin-bottom: 25px;
+	}
+	&__descr {
+		font-size: 20px;
+		font-weight: 500;
+		line-height: $mainLineHeight;
+		padding-top: 20px;
+		margin-bottom: 50px;
+	}
+	&__link {
+		font-size: 20px;
+		font-weight: 500;
+		text-decoration-line: underline;
+		&:hover {
+			color: rgba(255, 255, 255, 0.8);
+		}
+	}
+	&__icon {
+		display: inline-block;
+		width: 40px;
+		background-color: $background-color-default;
+		border-radius: 50%;
+		padding: 5px;
+		margin-right: 10px;
+	}
+	&__info {
+		font-size: 20px;
+		margin-left: 10px;
+	}
+	&__info-title {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: $mainFontSize;
+		font-weight: 500;
+		margin: 20px 0;
+		span {
+			color: $mainFontColor;
+		}
+	}
+}
+@media (max-width: 1100px) {
+	.product {
+		align-items: center;
+		flex-direction: column-reverse;
+		&__title {
+			margin-top: 0;
+			text-align: center;
+		}
+		&__box {
+			margin-bottom: 50px;
+			width: 100%;
+			max-width: 1100px;
+		}
+	}
+}
+@media (max-width: 700px) {
+	.product {
+		&__title {
+			font-size: 36px;
+			line-height: 36px;
+		}
+		&__descr {
+			font-size: 16px;
+		}
+		&__link {
+			font-size: 18px;
+		}
+		&__info-title {
+			font-size: 14px;
+			span {
+				font-size: 18px;
+			}
+		}
+	}
+}

@@ -1,7 +1,3 @@
-// тк мы к ним обращаемся везде ниже
-@import 'utils/vars';
-@import 'utils/reset';
-
 html {
 	line-height: $mainLineHeight;
 	font-size: $mainFontSize;
@@ -27,6 +23,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #f7f7f7;
+	background-color: $background-color-product;
 }
 
 *,
@@ -66,6 +63,7 @@ section,
 .section {
 	position: relative;
 	padding: 40px 0;
+	width: 100%;
 	@media screen and (max-width: $desktopWidth) {
 		padding: 36px 0;
 	}
@@ -76,30 +74,3 @@ section,
 		padding: 20px 0;
 	}
 }
-
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	margin: 0 auto;
-}
-
-.wrapper-content {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	&.wrapper-content--fixed {
-		margin-top: 80px;
-	}
-}
-
-.container {
-	width: 100%;
-	flex: 0 0 auto;
-	position: relative;
-	max-width: $desktopWidth;
-	margin: 0 auto;
-}
-
-@import './common.scss';
-@import './common/media.scss';

@@ -39,13 +39,13 @@
 		</section>
 		<section>
 			<div>
-				<div class="button-list">
+				<div class="button__list">
 					<div class="btn btnPrimary" @click="prevPage">&#8592;</div>
 					<div class="btn btnPrimary" @click="nextPage">&#8594;</div>
 				</div>
 			</div>
 		</section>
-    <Contact/>
+		<Contact />
 		<footer class="footer">
 			<ul class="footer__links">
 				<li class="footer__logo logo">
@@ -73,7 +73,7 @@ import { shopList } from '@/store/shop.js';
 import Contact from '@/pages/Contact.vue';
 
 export default {
-	components: { shopItem, Contact  },
+	components: { shopItem, Contact },
 	data() {
 		return {
 			shopList,
@@ -140,169 +140,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss">
-@import '../assets/scss/utils/vars.scss';
-.wrapper {
-	background-image: url(../assets/img/Фон_страницы.png);
-	background-size: cover;
-}
-.wrapper-content.wrapper-content--fixed {
-	padding: 0 10px;
-}
-.container__home h1,
-.container__home p {
-	position: relative; /* Нужно для позиционирования элементов над затемнением */
-	z-index: 1; /* Чтобы текстовые элементы отображались над затемнением */
-}
-.container {
-	&__home {
-		position: relative;
-		min-height: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: baseline;
-		flex-direction: column;
-		column-gap: 80px;
-		padding-top: 120px;
-		z-index: 2;
-	}
-	&__background {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: -190px;
-		max-width: 1920px;
-		height: 900px;
-		background-image: url(../assets/img/Фоновое_изображение_главной_стр.jpg);
-		background-repeat: no-repeat;
-		background-position: top center;
-		background-size: cover;
-		opacity: 0.25;
-		margin: 0 auto;
-	}
-	&__title {
-		color: $mainFontColor;
-		font-size: $titleFontSize;
-		font-weight: 700;
-		min-width: 650px;
-	}
-	&__subtitle {
-		color: $mainFontColor;
-		max-width: 500px;
-		font-size: 22px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 35px;
-		grid-column-start: 1;
-	}
-	&__text {
-		color: $mainFontColor;
-		font-size: 22px;
-		font-weight: 500;
-		line-height: 35px;
-		grid-column-start: 2;
-		grid-column-end: 3;
-		grid-row-start: 1;
-		grid-row-end: 3;
-	}
-	&__shop {
-		margin-top: 200px;
-		position: relative;
-	}
-	&__shop::before {
-		background: linear-gradient(63deg, rgba(0, 0, 0, 0.2) 54.27%, rgba(56, 90, 177, 0.12) 87.54%), #070714;
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-	&__social {
-		color: $mainFontColor;
-		font-family: $mainFont;
-		font-size: 16px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: 35px; /* 218.75% */
-		position: relative; /* Нужно для позиционирования элементов над затемнением */
-		z-index: 1; /* Чтобы текстовые элементы отображались над затемнением */
-	}
-	&__item {
-		width: 19.784px;
-		height: 12.134px;
-		flex-shrink: 0;
-	}
-}
-.link {
-	color: $mainFontColor;
-	font-family: $mainFont;
-	font-size: 36px;
-	font-weight: 700;
-	line-height: normal;
-	justify-content: left;
-	cursor: pointer;
-}
-.social-icons {
-	display: flex;
-	& a {
-		margin-right: 50px;
-	}
-	& img {
-		width: 20px;
-		height: 20px;
-	}
-}
-.item__wrapper {
-	display: grid;
-	align-items: start;
-	justify-content: start;
-	grid-template-columns: repeat(3, 1fr);
-	grid-row-gap: 60px;
-	grid-column-gap: 40px;
-}
-.shop {
-	&__title {
-		margin: 0;
-		padding: 0;
-		padding-bottom: 54px;
-		color: $mainFontColor;
-		font-family: $mainFont;
-		font-size: 54px;
-		font-weight: 700;
-		line-height: normal;
-	}
-	&__filter {
-		display: inline-flex;
-		height: 40.035px;
-		padding-bottom: 130px;
-		align-items: flex-end;
-		gap: 40px;
-		flex-shrink: 0;
-	}
-	&__item {
-		text-align: center;
-		background-color: rgba(26, 154, 214, 0.3);
-		border-radius: $border-radius;
-		color: $mainFontColor;
-		width: 160px;
-		height: 45px;
-		font-family: $mainFont;
-		font-size: 20px;
-		border: none;
-		cursor: pointer;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-	}
-	&__item:hover {
-		background-color: rgba(10, 205, 235, 0.3);
-	}
-}
-.button-list {
-	width: 100%;
-	text-align: center;
-}
-</style>

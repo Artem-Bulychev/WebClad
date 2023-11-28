@@ -1,0 +1,14 @@
+.link {
+	color: $mainFontColor;
+	font-family: $mainFont;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: normal;
+	justify-content: left;
+	cursor: pointer;
+}
+@media (max-width: 850px) {
+	.link {
+		font-size: 28px;
+	}
+}

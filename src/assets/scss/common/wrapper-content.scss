@@ -1,0 +1,17 @@
+.wrapper-content {
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	&.wrapper-content--fixed {
+		margin-top: 80px;
+	}
+}
+.wrapper-content.wrapper-content--fixed {
+	padding: 0 10px;
+}
+.wrapper-content.wrapper-content--fixed.wrapper-content--product {
+	margin-top: 0;
+	background-color: $background-color-product;
+}

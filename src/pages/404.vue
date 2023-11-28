@@ -8,13 +8,3 @@
 		</section>
 	</div>
 </template>
-
-<style lang="scss" scoped>
-.wrapper-content {
-	min-height: 80vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-}
-</style>

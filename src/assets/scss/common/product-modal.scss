@@ -1,0 +1,19 @@
+.product-modal {
+	&__title {
+		font-size: $titleFontSize;
+		font-weight: 700;
+		line-height: $titleFontSize;
+		color: $mainFontColor;
+		padding-top: 50px;
+		margin-bottom: 50px;
+	}
+}
+@media (max-width: 700px) {
+	.product-modal__title {
+		font-size: 44px;
+		line-height: 44px;
+		text-align: center;
+		padding-top: 25px;
+		margin-bottom: 25px;
+	}
+}

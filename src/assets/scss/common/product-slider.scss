@@ -1,0 +1,14 @@
+.product-slider {
+	&__img {
+		width: 100%;
+		max-width: 600px;
+		border-radius: $border-radius;
+	}
+}
+@media (max-width: 1100px) {
+	.product-slider__img {
+		display: flex;
+		margin: 0 auto;
+		align-items: center;
+	}
+}
