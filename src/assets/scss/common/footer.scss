@@ -65,6 +65,7 @@
 }
 @media (max-width: 700px) {
 	.footer {
+		width: 100%;
 		margin-top: 60px;
 		&__links {
 			flex-direction: column;

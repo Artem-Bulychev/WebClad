@@ -8,6 +8,22 @@
 	&__content {
 		display: flex;
 		justify-content: space-between;
-		gap: 20px;
+		gap: 40px;
+	}
+}
+@media (max-width: 1150px) {
+	.contacts {
+		&__content {
+			flex-direction: column;
+			gap: 80px;
+		}
+	}
+}
+@media (max-width: 850px) {
+	.contacts {
+		&__title {
+			font-size: 40px;
+			text-align: center;
+		}
 	}
 }

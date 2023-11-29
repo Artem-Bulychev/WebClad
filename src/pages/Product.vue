@@ -6,13 +6,13 @@
 				<div class="product">
 					<form class="form">
 						<div>
-							<label class="form__lable">Ваше ФИО<input class="form__input" type="text" /></label>
-							<label class="form__lable">Ваш номер телефона<input class="form__input" type="tel" /></label>
-							<label class="form__lable">Исполнитель<input class="form__input" type="text" /></label>
+							<label class="form__label">Ваше ФИО<input class="form__input" type="text" /></label>
+							<label class="form__label">Ваш номер телефона<input class="form__input" type="tel" /></label>
+							<label class="form__label">Исполнитель<input class="form__input" type="text" /></label>
 						</div>
 						<div>
-							<label class="form__lable">Ваш E-MAIL адрес<input class="form__input" type="email" /></label>
-							<label class="form__lable">Ваш комментарий<input class="form__input" type="text" /></label>
+							<label class="form__label">Ваш E-MAIL адрес<input class="form__input" type="email" /></label>
+							<label class="form__label">Ваш комментарий<input class="form__input" type="text" /></label>
 							<button class="btn btnPrimary form__btn" type="submit">Отправить заявку</button>
 						</div>
 					</form>

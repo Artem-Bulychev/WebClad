@@ -1,7 +1,7 @@
 <template>
 	<section class="contacts">
 		<div class="container">
-			<h2 class="contacts__title">КОНТАКТЫ</h2>
+			<h2 class="contacts__title">Контакты</h2>
 			<div class="contacts__content">
 				<div class="contacts__form">
 					<h3 class="form__title">Обратная связь</h3>
@@ -9,47 +9,43 @@
 
 					<!-- Форма обратной связи -->
 					<form action="#">
-						<div class="form-row">
+						<div class="form__row">
 							<!-- Email пользователя -->
-							<div class="form-group">
-								<label for="email" class="control-label">E-mail</label>
-								<input id="email" type="email" name="email" required="required" class="form-control" value="" />
+							<div class="form__group">
+								<label for="email" class="form__label form__label_contacts">E-mail</label>
+								<input id="email" type="email" name="email" required="required" class="form__control" value="" />
 							</div>
 							<!-- Имя пользователя -->
-							<div class="form-group">
-								<label for="message-theme" class="control-label">Тема сообщения</label>
-								<input id="message-theme" type="text" name="message-theme" class="form-control" value="" minlength="2" maxlength="30" required="required" />
+							<div class="form__group">
+								<label for="message-theme" class="form__label form__label_contacts">Тема сообщения</label>
+								<input id="message-theme" type="text" name="message-theme" class="form__control" value="" minlength="2" maxlength="30" required="required" />
 							</div>
 						</div>
 						<!-- Сообщение пользователя -->
-						<div class="form-group">
-							<label for="message" class="control-label">Сообщение</label>
-							<textarea id="message" name="message" class="form-control" rows="3" minlength="20" maxlength="500" required="required"></textarea>
+						<div class="form__group form__group_message">
+							<label for="message" class="form__label form__label_contacts">Сообщение</label>
+							<textarea id="message" name="message" class="form__control" rows="3" minlength="20" maxlength="500" required="required"></textarea>
 						</div>
 
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" name="agree" id="agree" required value="true" />
-							<label class="form-check-label" for="agree">Я даю согласие на обработку <a href="#">персональных данных</a></label>
+						<div class="form__check">
+							<input class="form__check_input" type="checkbox" name="agree" id="agree" required value="true" />
+							<label class="form__check_label" for="agree">Я даю согласие на обработку <a href="#">персональных данных</a></label>
 						</div>
 
-						<button class="form-button">Отправить</button>
+						<button class="btn btnPrimary form__btn">Отправить</button>
 					</form>
 				</div>
 				<div class="contacts__info">
 					<div class="info__email">
 						<a href="mailto:roman@bodrii.ru">roman@bodrii.ru</a>
 					</div>
-					<p class="info__write">
-						Напишите нам, если хотите стать <br />
-						верстальщиком WebClad. Перед сдачей <br />
-						проекта на проверку ознакомьтесь со статьей:
-					</p>
+					<p class="info__write">Напишите нам, если хотите стать верстальщиком WebClad. <span>Перед сдачей проекта на проверку ознакомьтесь со статьей:</span></p>
 					<div class="info__requirements">
 						<a href="#">Требования к верстке</a>
 					</div>
 					<div class="info__telegram">
-						<p class="telegram-link"><a href="t.me/Figmab">t.me/Figmab</a></p>
-						<p class="telegram-offer">Вступайте в телеграм-сообщество</p>
+						<p class="info__telegram-link"><a href="t.me/Figmab">t.me/Figmab</a></p>
+						<p class="info__telegram-offer">Вступайте в <span>телеграм-сообщество</span></p>
 					</div>
 				</div>
 			</div>
@@ -60,147 +56,3 @@
 <script>
 export default {};
 </script>
-
-<style>
-.form__subtitle,
-.info__requirements a,
-.telegram-offer,
-.form-check-label,
-.form-check-label a,
-.control-label,
-.form-control {
-	font-size: 25px;
-	line-height: 35px;
-	font-weight: 500;
-}
-
-.control-label,
-.form-check-label,
-.form-check-label a {
-	color: #9c9191;
-}
-
-.control-label,
-.form-check-label {
-	text-align: start;
-}
-
-.form-control {
-	background: rgba(0, 0, 0, 0.2);
-	border: none;
-	border-bottom: 3px solid #736c6c;
-	color: #cccccc;
-}
-
-#email {
-	width: 550px;
-	margin-right: 80px;
-	margin-bottom: 70px;
-}
-
-#message-theme {
-	width: 345px;
-}
-
-#email,
-#message-theme {
-	padding: 0;
-	border-radius: 0;
-}
-
-.form-row {
-	display: flex;
-	justify-content: space-between;
-}
-
-.form-group {
-	display: flex;
-	flex-direction: column;
-}
-
-.form-check {
-	margin-top: 32px;
-	margin-bottom: 58px;
-}
-
-#message {
-	resize: none;
-	padding: 0;
-	border-radius: 0;
-}
-
-.form-check-input {
-	display: none;
-}
-
-.form-check-input ~ label::before {
-	content: '\2713';
-	text-align: center;
-	color: rgb(0, 0, 0);
-	line-height: 1em;
-	width: 28px;
-	height: 28px;
-	border: 1px solid #949191;
-	margin-right: 15px;
-	display: inline-block;
-}
-
-.form-check-input:checked ~ label::before {
-	border: 3px solid #949191;
-	color: #949191;
-}
-
-.form-button {
-	color: #fff;
-	font-size: 20px;
-	font-weight: 600;
-	cursor: pointer;
-	width: 183px;
-	height: 42px;
-	border-radius: 42px;
-	background: linear-gradient(175deg, rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.4) 96.69%), #0017e3;
-	transition: 0.2s;
-}
-
-.form-button:hover {
-	background: linear-gradient(175deg, rgba(0, 0, 0, 0.4) 96.69%, rgba(0, 0, 0, 0.1) 36%), #0017e3;
-	transition: 0.2s;
-}
-
-.info__email a,
-.telegram-link a {
-	color: #fff;
-	font-size: 38px;
-	font-weight: 700;
-	line-height: 35px;
-	text-decoration-line: none;
-}
-
-.info__email {
-	margin-bottom: 28px;
-}
-
-.info__write {
-	font-size: 22px;
-	font-weight: 500;
-	line-height: 30px;
-	margin-bottom: 12px;
-}
-
-.info__requirements a {
-	color: #fff;
-	font-size: 25px;
-	font-weight: 500;
-	line-height: 35px;
-	text-decoration-line: underline;
-}
-
-.telegram-link {
-	margin-top: 120px;
-	margin-bottom: 14px;
-}
-
-.telegram-offer {
-	font-weight: 400;
-}
-</style>
