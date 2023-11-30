@@ -71,6 +71,7 @@
 import shopItem from '@/components/ShopItem.vue';
 import { shopList } from '@/store/shop.js';
 import Contact from '@/pages/Contact.vue';
+import axios from 'axios';
 
 export default {
 	components: { shopItem, Contact  },
@@ -122,6 +123,14 @@ export default {
 				this.page.current = Math.ceil(this.filteredShopList.length / this.page.length);
 			}
 		},
+
+		mounted() {
+		  axios
+		   .get('https://github.com/Artem-Bulychev/WebClad/blob/dev/src/store/WebCladAPI.php'); 
+		    then(response => {
+			     let res = response.data
+		 })
+	}
 
 		// Pagination
 		prevPage() {
