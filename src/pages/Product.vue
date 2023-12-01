@@ -28,7 +28,7 @@
 						</div>
 						<div class="product__wrap">
 							<p class="product__descr">{{ product.descr }}</p>
-							<a class="product-content__link link" href="#"><img class="product__icon" src="../assets/img/figma-svg.svg" alt="figma icon" />Ссылка на макет</a>
+							<a class="product__link link" href="#"><img class="product__icon" src="../assets/img/figma-svg.svg" alt="figma icon" />Ссылка на макет</a>
 							<p class="product__info-title">
 								Сложность:<span class="product__info">{{ product.level }}</span>
 							</p>
