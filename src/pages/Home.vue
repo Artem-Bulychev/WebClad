@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper-content wrapper-content--fixed">
 		<section style="position: relative">
-			<div class="container__background" style="background-image: url(../../public/backgroundhero.webp)"></div>
+			<div class="container__background"></div>
 			<div class="container">
 				<div class="container__home">
 					<h1 class="container__title">Макеты Figma для верстки сайтов</h1>
