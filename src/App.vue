@@ -1,5 +1,5 @@
 <template>
-	<div class="wrapper">
+	<div class="wrapper" style="background-image: url(../public/background.webp)">
 		<header>
 			<div class="navbar">
 				<div class="container">
