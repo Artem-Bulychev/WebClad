@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper-content wrapper-content--fixed">
-		<section style="position: relative">
+		<section id="home" style="position: relative">
 			<div class="container__background"></div>
 			<div class="container">
 				<div class="container__home">
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</section>
-		<section>
+		<section id="shop">
 			<div class="container">
 				<div class="container__shop">
 					<h1 class="shop__title">Библиотека макетов</h1>
@@ -110,6 +110,7 @@ export default {
 		},
 	},
 	methods: {
+
 		filterShop(filter) {
 			this.filter = filter;
 			// Apply filtering logic

@@ -9,7 +9,7 @@
 						</div>
 						<ul class="navbar__list">
 							<li class="navbar__item" v-for="link in links" :key="link.title">
-								<router-link class="navbar__link" :title="link.title" :to="link.url">{{ link.title }}</router-link>
+                <a class="navbar__link" :href="link.url" v-scroll-to="{ element: link.url, duration: 500, offset: -50 }">{{ link.title }}</a>
 							</li>
 						</ul>
 					</div>
@@ -24,13 +24,20 @@
 </template>
 
 <script>
+
 export default {
+
+	methods: {
+    scrollToSection(sectionId) {
+      this.$scrollTo(sectionId, 500, { offset: -20 }); // Adjust offset as needed
+    },
+  },
 	data() {
 		return {
 			links: [
-				{ title: 'Главная', url: '/' },
-				{ title: 'Макеты', url: '/shop' },
-				{ title: 'Контакты', url: '/contact' },
+				{ title: 'Главная', url: '#home' },
+				{ title: 'Макеты', url: '#shop' },
+				{ title: 'Контакты', url: '#contact' },
 			],
 		};
 	},
