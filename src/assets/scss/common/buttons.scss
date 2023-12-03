@@ -1,34 +1,43 @@
 .btn {
-  display: inline-block;
-  padding: .8em 2em;
-  line-height: 1;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 30px;
+	display: inline-block;
+	line-height: 1;
+	text-transform: uppercase;
+	border-radius: $border-radius;
+	padding: 10px 15px;
+	margin: 0 20px;
+	cursor: pointer;
 
-  // default btn
-  &.btnDefaul {
-    color: #ffffff;
-    border: 1px solid #333333;
-    background-color: #333333;
-  }
+	// default btn
+	&.btnDefaul {
+		color: $default-color;
+		border: 1px solid $border-base-color;
+		background-color: $background-color-default;
+	}
 
-  // primiry btn
-  &.btnPrimary {
-    color: #ffffff;
-    background-color: rgba(26, 154, 214, 0.3);
-  }
+	// primiry btn
+	&.btnPrimary {
+		color: $default-color;
+		background-color: $background-color-primary;
+		&:hover {
+			background-color: rgba(84, 226, 248, 0.3);
+		}
+	}
 
-  // danger btn
-  &.btnDanger {
-    color: #ffffff;
-    border: 1px solid hsl(0, 48%, 48%);
-    background-color: #b53f3f;
-  }
+	// danger btn
+	&.btnDanger {
+		color: $default-color;
+		border: 1px solid hsl(0, 48%, 48%);
+		background-color: $background-color-danger;
+	}
 
-  &.btnWhite {
-    color: #333333;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
-  }
+	&.btnWhite {
+		color: $border-base-color;
+		border: 1px solid $default-color;
+		background-color: $default-color;
+	}
+}
+
+.button__list {
+	width: 100%;
+	text-align: center;
 }

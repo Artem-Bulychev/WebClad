@@ -1,15 +1,14 @@
 .link {
-  cursor: pointer;
-  &.linkWhite {
-    border-bottom: 1px solid #ffffff;
-    color: #ffffff;
-  }
-  &.linkFalse {
-    border-bottom: 1px solid #b53f3f;
-    color: #b53f3f;
-  }
-  &.linkTrue {
-    border-bottom: 1px solid #7bd782;
-    color: #7bd782;
-  }
+	color: $mainFontColor;
+	font-family: $mainFont;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: normal;
+	justify-content: left;
+	cursor: pointer;
+}
+@media (max-width: 850px) {
+	.link {
+		font-size: 28px;
+	}
 }

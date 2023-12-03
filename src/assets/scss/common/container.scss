@@ -1,0 +1,173 @@
+.container {
+	width: 100%;
+	flex: 0 0 auto;
+	position: relative;
+	max-width: $desktopWidth;
+	margin: 0 auto;
+	&__home {
+		position: relative;
+		min-height: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: baseline;
+		flex-direction: column;
+		column-gap: 80px;
+		padding-top: 120px;
+		z-index: 2;
+	}
+	&__background {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -190px;
+		max-width: 1920px;
+		height: 900px;
+		background-image: url(../img/backgroundhero.webp);
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: cover;
+		opacity: 0.25;
+		margin: 0 auto;
+	}
+	&__title {
+		color: $mainFontColor;
+		font-size: $titleFontSize;
+		font-weight: 700;
+		min-width: 650px;
+	}
+	&__subtitle {
+		color: $mainFontColor;
+		max-width: 500px;
+		font-size: 22px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 35px;
+		grid-column-start: 1;
+	}
+	&__text {
+		color: $mainFontColor;
+		font-size: 22px;
+		font-weight: 500;
+		line-height: 35px;
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+	&__shop {
+		margin-top: 200px;
+		position: relative;
+	}
+	&__shop::before {
+		background: linear-gradient(63deg, rgba(0, 0, 0, 0.2) 54.27%, rgba(56, 90, 177, 0.12) 87.54%), #070714;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	&__social {
+		color: $mainFontColor;
+		font-family: $mainFont;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 35px; /* 218.75% */
+		position: relative; /* Нужно для позиционирования элементов над затемнением */
+		z-index: 1; /* Чтобы текстовые элементы отображались над затемнением */
+	}
+	&__item {
+		width: 19.784px;
+		height: 12.134px;
+		flex-shrink: 0;
+	}
+}
+.container__home h1,
+.container__home p {
+	position: relative; /* Нужно для позиционирования элементов над затемнением */
+	z-index: 1; /* Чтобы текстовые элементы отображались над затемнением */
+}
+@media (max-width: 1250px) {
+	.container {
+		&__home {
+			display: flex;
+			gap: 40px;
+			padding-top: 20px;
+		}
+		&__title {
+			width: 100%;
+			max-width: 650px;
+			min-width: 0;
+			text-align: center;
+			margin: 0 auto;
+		}
+		&__text {
+			order: 1;
+		}
+		&__subtitle {
+			max-width: 650px;
+			order: 2;
+		}
+		&__social {
+			order: 5;
+		}
+	}
+}
+@media (max-width: 1100px) {
+	.container__background {
+		top: -150px;
+	}
+}
+@media (max-width: 700px) {
+	.container {
+		&__home {
+			gap: 40px;
+			padding-top: 20px;
+		}
+		&__title {
+			font-size: 44px;
+			line-height: 44px;
+		}
+		&__text {
+			font-size: 20px;
+			line-height: 32px;
+		}
+		&__subtitle {
+			font-size: 16px;
+			line-height: 26px;
+			max-width: 378px;
+		}
+	}
+}
+@media (max-width: 550px) {
+	.container__shop {
+		margin-top: 100px;
+	}
+}
+@media (max-width: 400px) {
+	.container {
+		&__home {
+			gap: 20px;
+			padding-top: 20px;
+		}
+		&__title {
+			font-size: 32px;
+			line-height: 40px;
+		}
+		&__text {
+			font-size: 18px;
+			line-height: 30px;
+		}
+		&__subtitle {
+			font-size: 16px;
+			line-height: 25px;
+			max-width: 400px;
+		}
+		&__social {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
